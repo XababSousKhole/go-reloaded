@@ -12,5 +12,8 @@ func Process(text string) string {
 
 func processLine(text string) string {
 	text = applyTags(text)
+	text = fixPunctuation(text)
+	text = fixQuotes(text)
+	text = fixArticles(text)
 	return text
 }
