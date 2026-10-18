@@ -9,7 +9,6 @@ import (
 var tagRe = regexp.MustCompile(`\((hex|bin|up|low|cap)(?:,\s*(\d+))?\)`)
 var tokenRe = regexp.MustCompile(`\((?:hex|bin|up|low|cap)(?:,\s*\d+)?\)|\S+`)
 
-// applyTags reads the text token by token and applies each tag to the previous words.
 func applyTags(text string) string {
 	var words []string
 	for _, tok := range tokenRe.FindAllString(text, -1) {
@@ -46,7 +45,6 @@ func applyTag(words []string, tag string, n int) {
 	}
 }
 
-// convertBase replaces the last word by its decimal value.
 func convertBase(words []string, base int) {
 	last := len(words) - 1
 	v, err := strconv.ParseInt(words[last], base, 64)

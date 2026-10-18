@@ -5,7 +5,6 @@ import (
 	"unicode"
 )
 
-// changeCase applies up, low or cap to a single word.
 func changeCase(w, tag string) string {
 	switch tag {
 	case "up":
